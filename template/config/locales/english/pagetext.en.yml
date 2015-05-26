@@ -1,0 +1,5 @@
+# Used for any custom text on a page, not a header or database specific entry
+en:
+  pagetext:
+    boilerplatemodel:
+      custompagetext: "Custom Page Text"

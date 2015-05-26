@@ -1,0 +1,10 @@
+# used for page headers
+en:
+  header:    
+    home: 
+      index: "Home"
+    boilerplate:
+      index: "Index"
+      new: "New"
+      edit: "Edit"
+      show: "Show"

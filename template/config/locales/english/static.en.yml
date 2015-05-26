@@ -1,0 +1,7 @@
+# used to store static entries, where a database table is not required
+en:
+  static:
+    boilerplatemodel:
+      boilerplateattribute:
+        staticvalue1: "Static Value 1"
+        staticvalue2: "Static Value 2"
