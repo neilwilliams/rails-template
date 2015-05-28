@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 		
 		copy: {
-      development: {
+      production: {
   	    files: [
           // rails files
   	      {
@@ -51,19 +51,7 @@ module.exports = function(grunt) {
             flatten: true,
             expand: true,
             filter: 'isFile'
-					},
-          // duplicate stuff from template grunt file, so it runs the first time the dev runs this
-          // css
-		      {
-						expand: true,
-						flatten: true,
-						src: [
-              'bower_components/bootstrap/dist/css/bootstrap.min.css', // Bootstrap
-              'bower_components/bootstrap/dist/css/bootstrap-theme.min.css', // Bootstrap Theme
-              'bower_components/font-awesome/css/font-awesome.min.css' // font awesome
-            ],
-						dest: 'public/css/'
-					},        
+					},          
       
           // fonts
 		      {
@@ -74,21 +62,39 @@ module.exports = function(grunt) {
               'bower_components/font-awesome/fonts/*' // font awesome icons
             ],
 						dest: 'public/fonts/'
-					},
-      
-          // js
-		      {
-						expand: true,
-						flatten: true,
-						src: [
-              'bower_components/jquery/dist/jquery.min.js', // Jquery
-              'bower_components/bootstrap/dist/js/bootstrap.min.js' // Bootstrap
-            ],
-						dest: 'public/js/'
 					}
         ]
       }
 		},
+    
+    uglify: {
+      development: {
+        options: {
+          mangle: false,
+          beautify: true
+        },
+        files: {
+          'public/js/main.js': ['bower_components/jquery/src/jquery.js', 
+                                'bower_components/jquery-ujs/src/rails.js',
+                                'bower_components/bootstrap/dist/js/bootstrap.js',
+                                'app/assets/javascripts/main.js'
+                               ]
+        }
+      },
+      production: {
+        options: {
+          mangle: true,
+          beautify: false
+        },
+        files: {
+          'public/js/main.min.js': ['bower_components/jquery/src/jquery.js', 
+                                    'bower_components/jquery-ujs/src/rails.js',
+                                    'bower_components/bootstrap/dist/js/bootstrap.js',
+                                    'app/assets/javascripts/main.js'
+                                   ]
+        }        
+      }
+    },
     
     less: {
       development: {
@@ -121,6 +127,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default', ['copy:development', 'less:development','less:production']);
-
+  grunt.registerTask('default', ['copy:production', 'less:development','less:production', 'uglify:development', 'uglify:production']);
 };

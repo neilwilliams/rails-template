@@ -5,10 +5,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "Boilerplate" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Boilerplate" %>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/main.min.css" type="text/css" media="screen" />  
     
-    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -52,8 +50,6 @@
          </div>
       </main>
             
-      <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-      <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>    
-      <%= javascript_include_tag 'application' %>
+      <script src="js/main.min.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
