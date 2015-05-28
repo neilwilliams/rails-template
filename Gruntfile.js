@@ -85,7 +85,7 @@ module.exports = function(grunt) {
               'bower_components/bootstrap/dist/js/bootstrap.js',
               'app/assets/javascripts/main.js'],
         dest: 'public/js/main.js'
-      },
+      }
     },
     
     uglify: {
