@@ -51,7 +51,13 @@ npm install grunt-contrib-uglify --save
 npm install grunt-contrib-copy --save
 ```
 
-## Step 4 - Install this bower package in your app
+## Step 4 - Setup Bower to include this repo
+### Initialise Bower
+```
+bower init
+* Press enter until the end *
+```
+### Install this component
 ```
 bower install https://github.com/neilwilliams/rails-template.git#master --save
 ```
@@ -60,6 +66,26 @@ bower install https://github.com/neilwilliams/rails-template.git#master --save
 This assumes that your default bower directory is at the root of your application.
 ```
 grunt --gruntfile bower_components/rails-template/Gruntfile.js --base ./
+```
+
+## Step 6 - Tweak rails config
+### Setup locales
+* Remove the en.yml file from config/locales
+* Add the following to you application.rb config file:  
+```
+config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'english', '*.{rb,yml}').to_s]
+```
+There maybe something similar in there already, commented out. You can overwrite the existing line if it exists.
+
+### Gems
+You'll need to add the sass-rails gem, in order to use the built in rails js stuff (application.js), without using the pipeline.
+Open your Gemfile and add the following:
+```
+gem 'sass-rails'
+```
+The correct version based on your version of rails should install. However, once it has installed, sure to lock it down tpo the version installed afterwards:
+```
+gem 'sass-rails', '~> x.x.x'
 ```
 
 Your all set! Run your app and you should see it has been setup for you. You will also have your own Gruntfile.js so you can run 'Grunt' to generate any modifications you make to your assets.
