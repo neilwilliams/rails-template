@@ -62,4 +62,13 @@ This assumes that your default bower directory is at the root of your applicatio
 grunt --gruntfile bower_components/rails-template/Gruntfile.js --base ./
 ```
 
+## Step 6 - Activate some rails specific config
+### Setup locales
+* Remove the en.yml file from config/locales
+* Add the following to you application.rb config file:  
+```
+config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'english', '*.{rb,yml}').to_s]
+```
+There maybe something similar in there already, commented out. You can overwrite the existing line if it exists.
+
 Your all set! Run your app and you should see it has been setup for you. You will also have your own Gruntfile.js so you can run 'Grunt' to generate any modifications you make to your assets.
