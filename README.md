@@ -77,15 +77,7 @@ config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'english', '*.
 ```
 There maybe something similar in there already, commented out. You can overwrite the existing line if it exists.
 
-### Gems
-You'll need to add the sass-rails gem, in order to use the built in rails js stuff (application.js), without using the pipeline.
-Open your Gemfile and add the following:
-```
-gem 'sass-rails'
-```
-The correct version based on your version of rails should install. However, once it has installed, sure to lock it down tpo the version installed afterwards:
-```
-gem 'sass-rails', '~> x.x.x'
-```
-
 Your all set! Run your app and you should see it has been setup for you. You will also have your own Gruntfile.js so you can run 'Grunt' to generate any modifications you make to your assets.
+
+* Custom LESS (css) code should be placed in app/assets/stylesheets/main.less
+* Custom JavaScript should be placed in app/assets/javascripts/main.js
