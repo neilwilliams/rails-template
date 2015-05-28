@@ -31,7 +31,7 @@ npm install -g bower
 npm init
 * Press enter until the end *
 ```
-### Install grunt packes
+### Install grunt packages
 * Grunt
 * Grunt-contrib-less
 * Grunt-contrib-uglify
