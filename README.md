@@ -31,28 +31,19 @@ npm install -g bower
 npm init
 * Press enter until the end *
 ```
-### Grunt
+### Install grunt packes
+* Grunt
+* Grunt-contrib-less
+* Grunt-contrib-uglify
+* Grunt-contrib-copy
+* Grunt-contrib-concat
+
+Copy the full code block below, and paste in your terminal.
 ```
 npm install grunt --save
-```
-
-### Grunt-contrib-less
-```
 npm install grunt-contrib-less --save
-```
-
-### Grunt-contrib-uglify
-```
 npm install grunt-contrib-uglify --save
-```
-
-### Grunt-contrib-copy
-```
 npm install grunt-contrib-copy --save
-```
-
-### Grunt-contrib-concat
-```
 npm install grunt-contrib-concat --save
 ```
 
