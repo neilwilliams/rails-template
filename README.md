@@ -51,13 +51,13 @@ npm install grunt-contrib-uglify --save
 npm install grunt-contrib-copy --save
 ```
 
+### Grunt-contrib-concat
+```
+npm install grunt-contrib-concat --save
+```
+
 ## Step 4 - Setup Bower to include this repo
-### Initialise Bower
-```
-bower init
-* Press enter until the end *
-```
-### Install this component
+The final grunt command will generate you a bower.json, so you don't need to init one yourself
 ```
 bower install https://github.com/neilwilliams/rails-template.git#master --save
 ```

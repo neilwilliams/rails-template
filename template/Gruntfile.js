@@ -20,31 +20,28 @@ module.exports = function(grunt) {
       }
 		},
     
-    uglify: {
-      development: {
-        options: {
-          mangle: false,
-          beautify: true
-        },
-        files: {
-          'public/js/main.js': ['bower_components/jquery/src/jquery.js', 
-                                'bower_components/jquery-ujs/src/rails.js',
-                                'bower_components/bootstrap/dist/js/bootstrap.js',
-                                'app/assets/javascripts/main.js'
-                               ]
-        }
+    concat: {
+      options: {
+        separator: ';\n',
       },
+      production: {
+        src: ['bower_components/jquery/dist/jquery.js', 
+              'bower_components/jquery-ujs/src/rails.js',
+              'bower_components/bootstrap/dist/js/bootstrap.js',
+              'app/assets/javascripts/main.js'],
+        dest: 'public/js/main.js'
+      },
+    },
+    
+    uglify: {
       production: {
         options: {
           mangle: true,
-          beautify: false
+          beautify: false,
+          compress: true
         },
         files: {
-          'public/js/main.min.js': ['bower_components/jquery/src/jquery.js', 
-                                    'bower_components/jquery-ujs/src/rails.js',
-                                    'bower_components/bootstrap/dist/js/bootstrap.js',
-                                    'app/assets/javascripts/main.js'
-                                   ]
+          'public/js/main.min.js': 'public/js/main.js'
         }        
       }
     },
@@ -80,6 +77,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default', ['copy:production', 'less:development','less:production', 'uglify:development', 'uglify:production']);
-
+  grunt.loadNpmTasks('grunt-contrib-concat');  
+  grunt.registerTask('default', ['copy:production', 'less:development','less:production', 'concat:production', 'uglify:production']);
 };
