@@ -2,7 +2,7 @@
 This project is a bower package, which can be included into any rails app, in order to copy standard files across when starting a new project. The idea is that the project will grow to include templates for other types of applications too.
 
 ## Step 1 - Create a new rails app
-If your not familiar with Ruby on Rails, check out the [install rails](http://installrails.com/) page to get setup.
+If your not familiar with Ruby on Rails, check out the [install rails](http://installrails.com/) site to get setup.
 
 Once your setup, create yor new app. The following command creates a new app called 'myApp', but turns off the asset pipeline, and removes turbolinks.
 
@@ -10,7 +10,7 @@ Once your setup, create yor new app. The following command creates a new app cal
 rails new myApp --skip-sprockets --skip-turbolinks
 ```
 
-## Step 2 Dependencies
+## Step 2 - Dependencies
 This section can be skipped if you're already setup with NodeJs, Grunt and Bower.
 ### Node.js (npm)
 ```
