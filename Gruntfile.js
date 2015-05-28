@@ -100,7 +100,7 @@ module.exports = function(grunt) {
           ]
         },
         files: {
-          'public/css/main.css': 'template/assets/stylesheets/main.less'
+          'public/css/main.css': 'app/assets/stylesheets/main.less'
         }
       },
       production: {
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
           ]
         },
         files: {
-          'public/css/main.min.css': 'template/assets/stylesheets/main.less'
+          'public/css/main.min.css': 'app/assets/stylesheets/main.less'
         }
       }
     }      
